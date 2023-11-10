@@ -115,3 +115,36 @@ void loop()
 
 
 ```
+```C++
+#include <QuadDisplay2.h>     
+#include <TroykaThermometer.h>
+
+
+TroykaThermometer thermometer(A5);
+
+QuadDisplay qd(9);
+constexpr auto pinSensor = A0;
+
+void setup() {
+  Serial.begin(9600);
+  qd.begin();
+  
+}
+  
+void loop() {
+  thermometer.read();
+  int temperature = thermometer.getTemperatureC();
+
+  int valueSensor = analogRead(pinSensor);
+  Serial.println(temperature);
+
+  qd.displayTemperatureC(temperature);
+  if (temperature >= 25 && valueSensor >=250) {
+    qd.displayDigits(QD_Y, QD_O, QD_O, QD_NONE);
+  }
+  else{
+    qd.displayDigits(QD_O, QD_f, QD_f, QD_NONE);
+  }
+}
+  
+```
