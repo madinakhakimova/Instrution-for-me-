@@ -50,3 +50,33 @@ void loop() {
   led.setColor(255, 216, );
 }
 ```
+
+```C++
+#include <TroykaThermometer.h>
+const int led = 3;
+ 
+TroykaThermometer thermometer(A0);
+  
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+ 
+void loop()
+{
+ 
+  thermometer.read();
+  int temperature = thermometer.getTemperatureC();
+ 
+  Serial.print("Temperature is ");
+  Serial.print(temperature);
+  Serial.println(" C");
+   if(temperature >= 20) {
+    digitalWrite(led, HIGH);
+   }
+   else {
+    digitalWrite(led, LOW);
+   }
+}
+```
