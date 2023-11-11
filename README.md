@@ -148,3 +148,66 @@ void loop() {
 }
   
 ```
+
+```C++
+#define SPEED_1      5 
+#define DIR_1        4
+ 
+#define SPEED_2      6
+#define DIR_2        7
+ 
+void setup() {
+  for (int i = 4; i < 8; i++) {     
+    pinMode(i, OUTPUT);
+  }
+} 
+ 
+void loop() {
+ 
+  digitalWrite(DIR_1, LOW);
+  analogWrite(SPEED_1, 255);
+
+}
+```
+```C++
+#define SPEED_1      5 
+#define DIR_1        4
+ 
+#define SPEED_2      6
+#define DIR_2        7
+
+#define uy A0
+
+
+void setup(){
+  Serial.begin(9600);
+  pinMode (uy, INPUT);
+  
+  for (int i = 4; i < 8; i++) {     
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop(){
+  Serial.println(analogRead(uy));
+  delay(200);
+  int command = analogRead(uy);
+
+  if (command < 200) {
+       
+    digitalWrite(DIR_1, LOW); // set direction
+   analogWrite(SPEED_1, 255); // set speed
+  }
+  else if (command > 200 && command < 600){
+  digitalWrite(DIR_1, HIGH); // set direction
+   analogWrite(SPEED_1, 255);
+
+  }
+    else if (command > 600){
+  digitalWrite(DIR_1, HIGH); // set direction
+   analogWrite(SPEED_1, 0);
+
+  }      
+
+}
+```
