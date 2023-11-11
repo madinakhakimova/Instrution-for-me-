@@ -1,5 +1,6 @@
 # Arduino
 
+**Подключения 3 светодиода**
 ```c++
 const int led1 = 2;
 const int led2 = 4;
@@ -28,7 +29,7 @@ void loop()
 }
 
 ```
-
+**
 ```C++
 #include <RGBLed.h>
 
@@ -169,6 +170,7 @@ void loop() {
 
 }
 ```
+**С джой**
 ```C++
 #define SPEED_1      5 
 #define DIR_1        4
