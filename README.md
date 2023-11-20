@@ -30,7 +30,7 @@ void loop()
 ![IMG](photo_2023-11-18_10-50-13.jpg) 
 
 ```
-**
+**Новый свет светодиода**
 ```C++
 #include <RGBLed.h>
 
@@ -52,7 +52,7 @@ void loop() {
   led.setColor(255, 216, );
 }
 ```
-
+**Работа термоме
 ```C++
 #include <TroykaThermometer.h>
 const int led = 3;
