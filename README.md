@@ -27,6 +27,7 @@ void loop()
   digitalWrite(led3, 1);
   digitalWrite(led3, 0);
 }
+![IMG](photo_2023-11-18_10-50-13.jpg) 
 
 ```
 **
