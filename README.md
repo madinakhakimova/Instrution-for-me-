@@ -213,8 +213,11 @@ void loop(){
   }      
 
 }
+
+
+```
 **Draw square**
-```C++
+C++
 #include <IRremote.hpp>
 
 #define IR_RECEIVE_PIN 0
