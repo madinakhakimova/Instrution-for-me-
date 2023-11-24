@@ -245,49 +245,107 @@ void loop(){
       IrReceiver.resume(); // Enable receiving of the next value
       int command = IrReceiver.decodedIRData.command;
       
-      if (command = IR_BUTTON_MINUS) {
-        
-        
-        
+      switch (command) {
+        case IR_BUTTON_PLUS: {
+
           digitalWrite(DIR_1, LOW); // set direction
-          analogWrite(SPEED_1, 200); // set speed
+          analogWrite(SPEED_1, 255); // set speed
+
+          digitalWrite(DIR_2, LOW); // set direction
+          analogWrite(SPEED_2, 255); // set speed
+
+          break;
+        }
+        case IR_BUTTON_MINUS: {
+          digitalWrite(DIR_1, HIGH); // set direction
+          analogWrite(SPEED_1, 255); // set speed
 
           digitalWrite(DIR_2, HIGH); // set direction
-          analogWrite(SPEED_2, 255); // set speed поехали прямо
+          analogWrite(SPEED_2, 255); // set speed
 
-          delay(500);
-
+          break;
+        }
+        case IR_BUTTON_CH_PLUS: { // stop mototrs
           digitalWrite(DIR_1, HIGH); // set direction
-          analogWrite(SPEED_1, 200); // set speed
+          analogWrite(SPEED_1, 255); // set speed
 
-          
-          delay(500);
+          digitalWrite(DIR_2, LOW); // set direction
+          analogWrite(SPEED_2, 255); // set speed
+
+          break;
+        }
+        case IR_BUTTON_CH_MINUS: { 
 
           digitalWrite(DIR_1, LOW); // set direction
-          analogWrite(SPEED_1, 200); // set speed
+          analogWrite(SPEED_1, 255); // set speed
 
-         
+          digitalWrite(DIR_2, HIGH); // set direction
+          analogWrite(SPEED_2, 255); // set speed
+                                                         
+          delay (600);
+          
+          digitalWrite(DIR_1, LOW); // set direction
+          analogWrite(SPEED_1, 255); // set speed
 
-          delay(500);
+          digitalWrite(DIR_2, LOW); // set direction
+          analogWrite(SPEED_2, 255); // set speed
 
-          digitalWrite(DIR_1, HIGH); // set direction
-          analogWrite(SPEED_1, 200); // set speed
+          delay (800);
 
-       
-          delay(500);
+          digitalWrite(DIR_1, LOW); // set direction
+          analogWrite(SPEED_1, 255); // set speed
+
+          digitalWrite(DIR_2, HIGH); // set direction
+          analogWrite(SPEED_2, 255); // set speed
+
+          delay (600);
+
+          digitalWrite(DIR_1, LOW); // set direction
+          analogWrite(SPEED_1, 255); // set speed
+
+          digitalWrite(DIR_2, LOW); // set direction
+          analogWrite(SPEED_2, 255); // set speed
+
+          delay (800);
+
+          digitalWrite(DIR_1, LOW); // set direction
+          analogWrite(SPEED_1, 255); // set speed
+
+          digitalWrite(DIR_2, HIGH); // set direction
+          analogWrite(SPEED_2, 255); // set speed
+
+          delay (600);
+
+          digitalWrite(DIR_1, LOW); // set direction
+          analogWrite(SPEED_1, 255); // set speed
+
+          digitalWrite(DIR_2, LOW); // set direction
+          analogWrite(SPEED_2, 255); // set speed
+
+          delay (800);
+
+          digitalWrite(DIR_1, LOW); // set direction
+          analogWrite(SPEED_1, 255); // set speed
+
+          digitalWrite(DIR_2, HIGH); // set direction
+          analogWrite(SPEED_2, 255); // set speed
+
+          delay (600);
+
 
 
           analogWrite(SPEED_1, 0); 
-          analogWrite(SPEED_2, 0);  
+          analogWrite(SPEED_2, 0);
 
+          break;
+        }
+          case IR_BUTTON_PLAY_PAUSE: {
+            
+          analogWrite(SPEED_1, 0); 
+          analogWrite(SPEED_2, 0);
 
-
-          
+          break;
+        }
       }
   }
 }
-
- 
-
-          
-
