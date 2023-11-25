@@ -26,11 +26,10 @@ void loop()
   
   digitalWrite(led3, 1);
   digitalWrite(led3, 0);
-}
-![IMG](photo_2023-11-18_10-50-13.jpg) 
+} 
 
 ```
-**Новый цвет светодиода**
+**Новый свет светодиода**
 ```C++
 #include <RGBLed.h>
 
@@ -52,7 +51,7 @@ void loop() {
   led.setColor(255, 216, );
 }
 ```
-**Работа термоме
+**Светодиод горит если температура ниже или ровно на 20 С**
 ```C++
 #include <TroykaThermometer.h>
 const int led = 3;
@@ -83,6 +82,7 @@ void loop()
 }
 ```
 
+**Показывает на экране "YOO" или "OFF"**
 ```C++
            #include <QuadDisplay2.h>
 #include <TroykaThermometer.h>
@@ -115,8 +115,8 @@ void loop()
   
 }
 
-
 ```
+**Позазывает на экране "YOO" если температура ниже или ровно на 25 С или иначе**
 ```C++
 #include <QuadDisplay2.h>     
 #include <TroykaThermometer.h>
@@ -171,7 +171,7 @@ void loop() {
 
 }
 ```
-**С джой**
+**Управление с джойстиком**
 ```C++
 #define SPEED_1      5 
 #define DIR_1        4
@@ -349,3 +349,4 @@ void loop(){
       }
   }
 }
+```
